@@ -1,0 +1,1 @@
+web: gunicorn --pythonpath productreview productreview.wsgi --log-file -
