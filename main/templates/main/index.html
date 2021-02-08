@@ -1,0 +1,28 @@
+{% extends 'main/base.html' %}
+
+
+{% block content %}
+
+<div class="container">
+	<br>
+	<div class="card" id="backdrop">
+		<div class="card-body" style="background: #eef3ef;">
+			<div class="row">
+				{% for i in product %}
+				<div class="col-md-4">
+					<div class="card">
+						<div class="card-body">
+							<div class="text-center">
+							<img src="{{ i.image }}" alt="Image" class="img-fluid" width="70%">
+							<h3 class="text-center">{{ i.name }}</h3>
+							<i class="text-center">{{ i.release_date }}</i></div>
+							<a href="{% url 'main:detail' i.id %}">Read more...</a>
+						</div>
+					</div>
+				</div>
+				{% endfor %}
+			</div>
+		</div>
+	</div>
+</div>
+{% endblock %}
